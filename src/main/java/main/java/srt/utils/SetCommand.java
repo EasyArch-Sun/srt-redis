@@ -8,30 +8,30 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class GetCommand implements Command {
+public class SetCommand implements Command{
 
     private List<String> params;
 
     @Override
     public void params(List<String> args) {
-        this.params=params;
+        this.params=args;
     }
 
     @Override
     public void run(BufferedWriter os) throws IOException {
-        if(1==params.size()){
+        if(2==params.size()){
             String key=params.remove(0);
-            Map<String,String> string= BaseData.getInstance().string ;
-            String value=string.get(key);
+            String value=params.remove(0);
+            String string= BaseData.getInstance().getString(key) ;
+            string=value;
 
             if(null!=value){
-                RedisEncode.writeBulkString(os,value);
+                RedisEncode.writeString(os);
             }
         }else {
 
             RedisEncode.writeError(os,"ERR wrong number of arguments for"+"'"+"get"+"'"+"command");
 
         }
-
     }
 }

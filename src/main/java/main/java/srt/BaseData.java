@@ -1,10 +1,31 @@
 package main.java.srt;
 
-import jdk.nashorn.internal.objects.Global;
+import java.util.*;
 
 public class BaseData {
 
-    public static BaseData getInstance() {
+    private static BaseData ourInstance=new BaseData();
 
+    public static BaseData getInstance() {
+        return ourInstance;
     }
+
+    private BaseData(){
+    }
+
+    public Map<String,String> string=new HashMap<>();
+    public Map<String, List<String>> list=new HashMap<>();
+    public Map<String, HashMap<String,String>> map=new HashMap<>();
+    public Map<String, Set<String>> set=new HashMap<>();
+
+    public String getString(String key){
+        return string.putIfAbsent(key,"");
+    }
+
+    public List<String> getList(String key){
+        return list.computeIfAbsent(key,k->new ArrayList<>());
+    }
+
+
+
 }
