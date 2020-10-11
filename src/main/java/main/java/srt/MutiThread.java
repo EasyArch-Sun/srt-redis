@@ -11,7 +11,7 @@ public class MutiThread {
     private Socket socket;
 
     public MutiThread(Socket client) {
-        this.socket=socket;
+        this.socket=client;
     }
 
     public void run(){

@@ -9,5 +9,6 @@ public class Test {
         String put=map.put("1","1");
         System.out.println(map.get("1"));
 
+
     }
 }
