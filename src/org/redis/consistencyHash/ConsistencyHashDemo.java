@@ -7,6 +7,7 @@ import java.util.*;
 
 class JedisProxy{
 
+    //服务器
     private static String[][] redisNodeList={
             {"localhost","6379"},
             {"localhost","6380"},
@@ -15,21 +16,25 @@ class JedisProxy{
 
     };
 
-    private static Map<String, Jedis> serverConnectMap = new HashMap<>();
+   // private static Map<String, Jedis> serverConnectMap = new HashMap<>();
 
+    //虚拟结点名称
     private static SortedMap<Integer,String> virtualNodes =new TreeMap<>();
 
     private static final int VIRTUAL_NODES = 10;
 
     static {
-        for(String[] str1: redisNodeList){
+        for(int i=0;i<redisNodeList.length;i++){
 
-
+            addServer("localhost","6379");
+            addServer("localhost","6380");
+            addServer("localhost","6381");
+            addServer("localhost","6382");
         }
         System.out.println("xxx");
     }
 
-    private static int getHash(String str){
+    protected static int getHash(String str){
 
         final int p=1677619;
         int hash = (int) 2166136261L;
@@ -52,7 +57,7 @@ class JedisProxy{
         return hash;
     }
 
-    private static String getServer(String node){
+    protected static String getServer(String node){
 
         //得到带路由的结点的Hash值
         int hash=getHash(node);
@@ -87,59 +92,51 @@ class JedisProxy{
             virtualNodes.put(hash,virtualNodeName);
         }
 
-        serverConnectMap.put(ip+":"+port,new Jedis(ip,Integer.parseInt(port)));
+        //serverConnectMap.put(ip+":"+port,new Jedis(ip,Integer.parseInt(port)));
     }
 
 
-    public String get(String key){
-
-        String server=getServer(key);
-
-        Jedis serverConnector=serverConnectMap.get(server);
-
-        if(serverConnector.get(key)==null){
-            System.out.println(key+"not in host :" +server);
-        }
-
-        return serverConnector.get(key);
-    }
+//    public String get(String key){
+//
+//        String server=getServer(key);
+//
+//        Jedis serverConnector=serverConnectMap.get(server);
+//
+//        if(serverConnector.get(key)==null){
+//            System.out.println(key+"not in host :" +server);
+//        }
+//
+//        return serverConnector.get(key);
+//    }
 
 
     public void set(String key,String value){
 
         String server=getServer(key);
 
-        Jedis serverConnector =serverConnectMap.get(server);
+        //Jedis serverConnector =serverConnectMap.get(server);
 
-        serverConnector.set(key,value);
+        //serverConnector.set(key,value);
 
         System.out.println("set"+key+"into host :"+server);
     }
 
 
-    public void flushdb(){
-        for(String str:serverConnectMap.keySet()){
 
-            System.out.println("清空host："+str);
-            serverConnectMap.get(str).flushDB();
-        }
-    }
-
-
-    public float targetPercent(List<String> keyList){
-
-        int mingzhong = 0;
-        for(String key:keyList){
-            String server=getServer(key);
-            Jedis serverConnector =serverConnectMap.get(server);
-
-            if(serverConnector.get(key) !=null){
-                mingzhong++;
-            }
-        }
-
-        return (float) mingzhong/keyList.size();
-    }
+//    public float targetPercent(List<String> keyList){
+//
+//        int mingzhong = 0;
+//        for(String key:keyList){
+//            String server=getServer(key);
+//            Jedis serverConnector =serverConnectMap.get(server);
+//
+//            if(serverConnector.get(key) !=null){
+//                mingzhong++;
+//            }
+//        }
+//
+//        return (float) mingzhong/keyList.size();
+//    }
 
 }
 
@@ -151,20 +148,27 @@ public class ConsistencyHashDemo {
     public static void main(String[] args) {
 
         JedisProxy jedis=new JedisProxy();
-        jedis.flushdb();
 
         List<String> keyList = new ArrayList<>();
 
-        for(int i=0;i<1000000;i++){
-            keyList.add(Integer.toString(i));
+
+        for(int i=0;i<12;i++){
+            keyList.add("zzz");
             jedis.set(Integer.toString(i),"value" );
         }
 
-        float tp = jedis.targetPercent(keyList);
 
-        System.out.println("before:"+tp);
-        JedisProxy.addServer("localhost","6379");
-        System.out.println("after:"+tp);
+        String[] keys={"小明","小兰"};
+        for(int i=0;i<keys.length;i++){
+            System.out.println("["+keys[i]+"]的hash值为"+
+                    jedis.getHash(keys[i])+",被路由到的结点["+jedis.getServer(keys[i])+"]");
+        }
+//
+//        float tp = jedis.targetPercent(keyList);
+//
+//        System.out.println("before:"+tp);
+//        JedisProxy.addServer("localhost","6379");
+//        System.out.println("after:"+tp);
 
     }
 }

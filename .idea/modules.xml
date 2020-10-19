@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/redis-cli.iml" filepath="$PROJECT_DIR$/redis-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redix-tree/redix-tree.iml" filepath="$PROJECT_DIR$/redix-tree/redix-tree.iml" />
     </modules>
   </component>
 </project>
