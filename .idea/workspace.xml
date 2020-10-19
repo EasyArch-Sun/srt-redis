@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc882b4d-a3c7-48a0-b295-953427c828a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/redix-tree/redix-tree.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redix-tree/src/java/RedixTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redix-tree/src/java/RedixTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redix-tree/src/java/RedixTreeVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/redis/pubsub/PubTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/redis/pubsub/SubTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/redis/consistencyHash/ConsistencyHashDemo.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/redis/pubsub/PubTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2250">
-              <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
+            <state relative-caret-position="342">
+              <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,7 +42,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/jedis-2.9.0.jar!/redis/clients/jedis/JedisPubSub.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/redis/pubsub/SubTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/redix-tree/src/java/RedixTree.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="298">
@@ -144,6 +160,8 @@
         <option value="$PROJECT_DIR$/redix-tree/src/java/RedixTreeNode.java" />
         <option value="$PROJECT_DIR$/redix-tree/src/java/RedixTreeVisitor.java" />
         <option value="$PROJECT_DIR$/redix-tree/src/java/RedixTree.java" />
+        <option value="$PROJECT_DIR$/src/org/redis/pubsub/SubTest.java" />
+        <option value="$PROJECT_DIR$/src/org/redis/pubsub/PubTest.java" />
       </list>
     </option>
   </component>
@@ -173,6 +191,49 @@
             <path>
               <item name="redis-cli" type="b2602c69:ProjectViewProjectNode" />
               <item name="redis-cli" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redis-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redis-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redis-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redis-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redis-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redis-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redis-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redis-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="consistencyHash" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="redis-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redis-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="consistencyHash" type="462c0819:PsiDirectoryNode" />
+              <item name="ConsistencyHashDemo.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="redis-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="redis-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="org" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="pubsub" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="redis-cli" type="b2602c69:ProjectViewProjectNode" />
@@ -240,13 +301,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ConsistencyHashDemo">
+  <component name="RunManager" selected="Application.PubTest">
     <configuration name="ConsistencyHashDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.redis.consistencyHash.ConsistencyHashDemo" />
       <module name="redis-cli" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.redis.consistencyHash.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PubTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.redis.pubsub.PubTest" />
+      <module name="redis-cli" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.redis.pubsub.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -269,6 +343,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PubTest" />
         <item itemvalue="Application.ConsistencyHashDemo" />
         <item itemvalue="Application.Test" />
       </list>
@@ -298,7 +373,7 @@
       <workItem from="1602985152854" duration="1679000" />
       <workItem from="1602992358319" duration="599000" />
       <workItem from="1603033364907" duration="4057000" />
-      <workItem from="1603112034992" duration="6946000" />
+      <workItem from="1603112034992" duration="7862000" />
     </task>
     <task id="LOCAL-00001" summary="consistencyHash--一致性hash">
       <created>1603035673863</created>
@@ -314,11 +389,18 @@
       <option name="project" value="LOCAL" />
       <updated>1603114254938</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="redixTree--基数树">
+      <created>1603124306343</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603124306343</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25338000" />
+    <option name="totallyTimeSpent" value="26254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="990" y="0" width="930" height="1080" extended-state="0" />
@@ -365,7 +447,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="consistencyHash--一致性hash" />
-    <option name="LAST_COMMIT_MESSAGE" value="consistencyHash--一致性hash" />
+    <MESSAGE value="redixTree--基数树" />
+    <option name="LAST_COMMIT_MESSAGE" value="redixTree--基数树" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -377,16 +460,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/redix-tree/src/java.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_201/src.zip!/java/util/TreeMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -398,16 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/redis/consistencyHash/ConsistencyHashDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -485,6 +548,50 @@
             <element signature="e#1040#1041#0" expanded="true" />
             <element signature="e#1101#1102#0" expanded="true" />
             <element signature="e#1128#1129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/redis/consistencyHash/ConsistencyHashDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="125" column="46" selection-start-line="125" selection-start-column="46" selection-end-line="125" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/redis/pubsub/SubTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jedis-2.9.0.jar!/redis/clients/jedis/JedisPubSub.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/redis/pubsub/PubTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="59" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
