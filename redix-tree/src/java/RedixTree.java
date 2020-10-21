@@ -29,9 +29,24 @@ public class RedixTree <V extends Serializable> implements Map<String, V>, Seria
     }
 
 
-    private void visit(RedixTreeNode<V> node,String prefixAllowed,String prefix){
+    private void visit(RedixTreeNode<V> node,String prefixAllowed,String prefix,RedixTreeVisitor<V,?> visitor){
 
-        if (node.)
+        if (node.hasValue() && prefix.startsWith(prefixAllowed)){
+            visitor.visit(prefix,node.getValue());
+        }
+
+        for(RedixTreeNode<V> child :node){
+
+            final int prefixlen=prefix.length();
+            final String newPrefix=prefix+child.getPrefix();
+
+            if(prefixAllowed.length()<=prefixlen||
+            newPrefix.length()<=prefixlen||
+            newPrefix.charAt(prefixlen)==prefixAllowed.charAt(prefixlen)){
+
+                visit(child,prefixAllowed,newPrefix,visitor);
+            }
+        }
     }
 
 
@@ -44,16 +59,40 @@ public class RedixTree <V extends Serializable> implements Map<String, V>, Seria
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return root.getChildren().isEmpty();
     }
 
     @Override
-    public boolean containsKey(Object key) {
-        return false;
+    public boolean containsKey(final Object keyToCheck) {
+
+        if(keyToCheck==null){
+            throw new NullPointerException(KCBN);
+        }
+        if(!(keyToCheck instanceof String)){
+            throw new ClassCastException(KMBSI);
+        }
+
+        RedixTreeVisitor<V,Boolean> visitor=new RedixTreeVisitor<V, Boolean>() {
+            boolean found=false;
+
+            @Override
+            public void visit(String key, V value) {
+                if(key.equals(keyToCheck)){
+                    found=true;
+                }
+            }
+
+            @Override
+            public Boolean getResult() {
+                return found;
+            }
+        };
+        visit(visitor,(String)keyToCheck);
+        return visitor.getResult();
     }
 
     @Override
-    public boolean containsValue(Object value) {
+    public boolean containsValue(final Object val) {
         return false;
     }
 
@@ -80,6 +119,7 @@ public class RedixTree <V extends Serializable> implements Map<String, V>, Seria
     @Override
     public void clear() {
 
+        root.getChildren().clear();
     }
 
     @Override

@@ -53,7 +53,7 @@ public class RedixTreeNode<V extends Serializable> implements Iterable<RedixTree
         this.prefix = prefix;
     }
 
-    public boolean isHasValue() {
+    public boolean hasValue() {
         return hasValue;
     }
 

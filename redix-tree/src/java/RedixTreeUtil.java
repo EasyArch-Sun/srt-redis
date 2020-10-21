@@ -32,7 +32,7 @@ public class RedixTreeUtil {
 
     static <V extends Serializable> void dumpTree(RedixTree<V> node,String outputPrefix){
 
-        if(node.hashValue()){
+        if(node.hasValue()){
             System.out.format("%s{%s : %s}%n", outputPrefix, node.getPrefix(), node.getValue());
 
         }else {
