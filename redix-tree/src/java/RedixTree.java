@@ -29,6 +29,13 @@ public class RedixTree <V extends Serializable> implements Map<String, V>, Seria
     }
 
 
+    private void visit(RedixTreeNode<V> node,String prefixAllowed,String prefix){
+
+        if (node.)
+    }
+
+
+
 
     @Override
     public int size() {
