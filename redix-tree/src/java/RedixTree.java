@@ -52,6 +52,9 @@ public class RedixTree <V extends Serializable> implements Map<String, V>, Seria
 
 
 
+
+
+
     @Override
     public int size() {
         return 0;
@@ -93,12 +96,54 @@ public class RedixTree <V extends Serializable> implements Map<String, V>, Seria
 
     @Override
     public boolean containsValue(final Object val) {
-        return false;
+
+        RedixTreeVisitor<V,Boolean> visitor=new RedixTreeVisitor<V, Boolean>() {
+
+            boolean found=false;
+            @Override
+            public void visit(String key, V value) {
+                if(val==value||value!=null&&value.equals(val)){
+                    found=true;
+                }
+            }
+
+            @Override
+            public Boolean getResult() {
+                return found;
+            }
+        };
+        visit(visitor);
+        return visitor.getResult();
     }
 
     @Override
-    public V get(Object key) {
-        return null;
+    public V get(final Object keyToCheck) {
+
+        if(keyToCheck==null){
+            throw new NullPointerException(KCBN);
+        }
+        if(!(keyToCheck instanceof String)){
+            throw new ClassCastException(KMBSI);
+        }
+
+        RedixTreeVisitor<V,V> visitor=new RedixTreeVisitor<V, V>() {
+
+            V result=null;
+            @Override
+            public void visit(String key, V value) {
+                if(key.equals(keyToCheck)){
+                    result=value;
+                }
+            }
+
+            @Override
+            public V getResult() {
+                return result;
+            }
+        };
+
+        visit(visitor,(String)keyToCheck);
+        return visitor.getResult();
     }
 
     @Override
